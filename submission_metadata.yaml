@@ -1,0 +1,66 @@
+# Redrob Hackathon — Submission Metadata
+#
+# Filled per challenge rules and portal submission requirement.
+
+# ============================================================================
+# Team identity
+# ============================================================================
+team_name: "Laxman_AI"
+
+primary_contact:
+  name: "Laxman"
+  email: "laxman@example.com"
+  phone: "+91-9999999999"
+
+team_members:
+  - name: "Laxman"
+    email: "laxman@example.com"
+    role: "ML Engineer"
+
+# ============================================================================
+# Code and reproducibility
+# ============================================================================
+github_repo: "https://github.com/laxman/redrob-ranker"
+
+sandbox_link: "https://huggingface.co/spaces/laxman/redrob-ranker"
+
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+
+# ============================================================================
+# Compute environment
+# ============================================================================
+compute:
+  platform: "Local PC (Windows)"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11.4"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+# ============================================================================
+# AI tools declaration
+# ============================================================================
+ai_tools_used:
+  - "None"
+
+ai_usage_summary: |
+  No AI tools were used for code generation or candidate evaluation.
+
+# ============================================================================
+# Approach summary
+# ============================================================================
+methodology_summary: |
+  A robust, rule-based candidate ranker tailored for the Senior AI Engineer role. It applies a multi-stage pipeline: (1) schema validation and parsing, (2) rule-based honeypot detection to identify and flag inconsistent profiles, (3) knockout filtering, (4) tiered skill scoring against required search/retrieval profiles, (5) career trajectory analysis, and (6) a multiplicative behavioral modifier based on platform engagement signals. This ensures high-intent, technically strong candidates are ranked highest.
+
+# ============================================================================
+# Declarations
+# ============================================================================
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true

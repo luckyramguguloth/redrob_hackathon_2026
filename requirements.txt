@@ -1,0 +1,2 @@
+# no third-party packages needed — pure stdlib
+# Python 3.9+

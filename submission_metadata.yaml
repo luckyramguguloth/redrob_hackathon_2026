@@ -5,16 +5,16 @@
 # ============================================================================
 # Team identity
 # ============================================================================
-team_name: "Laxman_AI"
+team_name: "Laxman_HYD"
 
 primary_contact:
   name: "Laxman"
-  email: "laxman@example.com"
-  phone: "+91-9999999999"
+  email: "luckyramguguloth@gmail.com"
+  phone: "+91-9949447607"
 
 team_members:
   - name: "Laxman"
-    email: "laxman@example.com"
+    email: "luckyramguguloth@gmail.com"
     role: "ML Engineer"
 
 # ============================================================================
@@ -22,9 +22,7 @@ team_members:
 # ============================================================================
 github_repo: "https://github.com/laxman/redrob-ranker"
 
-sandbox_link: "https://huggingface.co/spaces/laxman/redrob-ranker"
-
-reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./result_candidates.csv"
 
 # ============================================================================
 # Compute environment
@@ -33,7 +31,7 @@ compute:
   platform: "Local PC (Windows)"
   cpu_cores: 8
   ram_gb: 16
-  python_version: "3.11.4"
+  python_version: "3.10.0"
   os: "Windows 11"
   uses_gpu_for_inference: false
   has_network_during_ranking: false
@@ -44,10 +42,13 @@ compute:
 # AI tools declaration
 # ============================================================================
 ai_tools_used:
-  - "None"
+  - "Claude"
+  - "Gemini"
+  - "ChatGPT"
 
 ai_usage_summary: |
-  No AI tools were used for code generation or candidate evaluation.
+  Used AI tools (Claude, Gemini, and ChatGPT) as programming assistants to identify performance bottlenecks in the parsing module and to refactor tiered loops into O(1) dictionary lookups. Additionally, utilized AI tools to design and debug CSS styling for the Streamlit dashboard layout. No candidate profile data was shared with any external AI models.
+
 
 # ============================================================================
 # Approach summary

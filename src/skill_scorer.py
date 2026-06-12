@@ -160,20 +160,34 @@ def score_skills(c):
 
         matched_tier = None
         matched_val = 0.0
-        for kw, val in TIER_A.items():
-            if kw in sname:
-                matched_tier = "A"
-                matched_val = max(matched_val, val)
+
+        # Fast O(1) exact match lookup first
+        if sname in TIER_A:
+            matched_tier = "A"
+            matched_val = TIER_A[sname]
+        elif sname in TIER_B:
+            matched_tier = "B"
+            matched_val = TIER_B[sname]
+        elif sname in TIER_C:
+            matched_tier = "C"
+            matched_val = TIER_C[sname]
+
+        # Fallback to substring matching if exact match is not found
         if not matched_tier:
-            for kw, val in TIER_B.items():
+            for kw, val in TIER_A.items():
                 if kw in sname:
-                    matched_tier = "B"
+                    matched_tier = "A"
                     matched_val = max(matched_val, val)
-        if not matched_tier:
-            for kw, val in TIER_C.items():
-                if kw in sname:
-                    matched_tier = "C"
-                    matched_val = max(matched_val, val)
+            if not matched_tier:
+                for kw, val in TIER_B.items():
+                    if kw in sname:
+                        matched_tier = "B"
+                        matched_val = max(matched_val, val)
+            if not matched_tier:
+                for kw, val in TIER_C.items():
+                    if kw in sname:
+                        matched_tier = "C"
+                        matched_val = max(matched_val, val)
 
         if matched_tier == "A":
             tier_a_score += matched_val * effective

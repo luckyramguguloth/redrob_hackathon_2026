@@ -74,15 +74,16 @@ def _has_any_tech_signal(c):
         if kw in title:
             return True
 
-    # Search declared skills
-    for sk in c["skill_names"]:
-        for rel in MIN_RELEVANT_SKILLS:
-            if rel in sk:
-                return True
+    # Search declared skills using pre-concatenated string
+    skills_concat = c["skills_concat"]
+    for rel in MIN_RELEVANT_SKILLS:
+        if rel in skills_concat:
+            return True
 
     # Search overall job history text
+    job_text = c["job_text"]
     for rel in ("python", "machine learning", "data", "engineer", "software", "ml"):
-        if rel in c["job_text"]:
+        if rel in job_text:
             return True
 
     return False

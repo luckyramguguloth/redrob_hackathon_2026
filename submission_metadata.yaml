@@ -15,12 +15,12 @@ primary_contact:
 team_members:
   - name: "Laxman"
     email: "luckyramguguloth@gmail.com"
-    role: "ML Engineer"
+    role: "AI Engineer"
 
 # ============================================================================
 # Code and reproducibility
 # ============================================================================
-github_repo: "https://github.com/laxman/redrob-ranker"
+github_repo: "https://github.com/luckyramguguloth/redrob_hackathon_2026"
 
 reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./result_candidates.csv"
 

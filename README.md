@@ -31,7 +31,6 @@ This system processes a pool of **100,000 candidates** (`candidates.jsonl`) and 
 redrob_ranker/
 ├── rank.py                    # Main CLI execution entry point
 ├── README.md                  # Project documentation 
-├── requirements.txt           # Python dependency file (standard library only)
 ├── submission_metadata.yaml   # Portal metadata for Stage 3 validation
 ├── result_candidates.csv      # Generated final top-100 ranked output CSV
 ├── India_runs_data_and_ai_challenge/ # Challenge resources and datasets (Git ignored)

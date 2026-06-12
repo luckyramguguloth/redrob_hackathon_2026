@@ -13,11 +13,11 @@ This system processes a pool of **100,000 candidates** (`candidates.jsonl`) and 
 * **Tiered Skill Matcher**: Evaluates candidates against specific required skills (embeddings, vector search, retrieval metrics) across three priority tiers.
 * **Deterministic Tie-Breaking**: Implements high-precision formatting with candidate ID ascending sorting to resolve identical scores.
 
-### 🎨 UI Enhancements (Streamlit App)
+### 🎨 UI (Streamlit App)
 * **Glassmorphism & Styling**: Injected sleek CSS templates featuring transparent backdrops, blur states, and deep slate/indigo gradients.
 * **Split-Pane Profile Inspector**: Added a dual-column layout containing a shortlist datatable on the left and a detailed candidate detail inspector card on the right, displaying skill badges, YOE, location, and reasonings.
 
-### ⚡ Backend Performance Optimizations
+### ⚡ Backend Performance 
 * **Fast Date Indexing**: manual string slicing and date math, rendering date computations up to 10x faster.
 * **Single-Pass Lowercasing**: Joined job description texts first and lowercased once, minimizing heap string allocations.
 * **O(1) Hash Map Skill Lookups**: Implemented exact dictionary checks first, bypassing loop queries for >90% of standard skills.

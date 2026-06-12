@@ -10,7 +10,7 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 # Convert sample_candidates.json to a temp .jsonl for the ranker
-base = r'..\[PUB] India_runs_data_and_ai_challenge\[PUB] India_runs_data_and_ai_challenge\India_runs_data_and_ai_challenge'
+base = r'..\India_runs_data_and_ai_challenge\India_runs_data_and_ai_challenge'
 
 sample_json = os.path.join(base, 'sample_candidates.json')
 temp_jsonl = 'sample_candidates.jsonl'

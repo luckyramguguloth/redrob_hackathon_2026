@@ -1,16 +1,19 @@
 import json
-from datetime import date, datetime
+from datetime import date
 
 
 REFERENCE_DATE = date(2026, 6, 9)
 
 
 def _days_ago(date_str):
-    if not date_str:
+    if not date_str or len(date_str) < 10:
         return 9999
     try:
-        d = datetime.strptime(date_str, "%Y-%m-%d").date()
-        return (REFERENCE_DATE - d).days
+        # Fast direct string slicing to avoid strptime regex and locale check overheads
+        y = int(date_str[:4])
+        m = int(date_str[5:7])
+        d = int(date_str[8:10])
+        return (REFERENCE_DATE - date(y, m, d)).days
     except Exception:
         return 9999
 
@@ -22,10 +25,11 @@ def _skill_names(skills_list):
 def _all_job_text(career_history):
     parts = []
     for job in career_history:
-        parts.append(job.get("title", "").lower())
-        parts.append(job.get("company", "").lower())
-        parts.append(job.get("description", "").lower())
-    return " ".join(parts)
+        parts.append(job.get("title") or "")
+        parts.append(job.get("company") or "")
+        parts.append(job.get("description") or "")
+    # Lowercase the entire joined string at once to reduce allocations
+    return " ".join(parts).lower()
 
 
 def _total_career_months(career_history):
@@ -49,6 +53,8 @@ def flatten(c):
     skills = c.get("skills", [])
     edu = c.get("education", [])
 
+    skill_names_list = _skill_names(skills)
+
     flat = {
         "candidate_id": c["candidate_id"],
         # profile
@@ -63,8 +69,9 @@ def flatten(c):
         "current_company_size": p.get("current_company_size", ""),
         "current_industry": p.get("current_industry", ""),
         # derived
-        "skill_names": _skill_names(skills),
+        "skill_names": skill_names_list,
         "skills_raw": skills,
+        "skills_concat": " ".join(skill_names_list),
         "job_text": _all_job_text(career),
         "career_raw": career,
         "total_career_months": _total_career_months(career),

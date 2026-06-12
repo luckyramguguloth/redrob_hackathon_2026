@@ -46,8 +46,6 @@ Thumbs.db
 *.log
 sample_candidates.jsonl
 sample_output.csv
-submission_test.csv
-Laxman_AI.csv
 
 # Challenge Resources and Datasets (Large Files)
 India_runs_data_and_ai_challenge/

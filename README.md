@@ -11,17 +11,14 @@ This system processes a pool of **100,000 candidates** (`candidates.jsonl`) and 
 * **Profile Validation & Consistency Checks**: Automatically flags and eliminates profiles with chronological inconsistencies, fake skills, or impossible behavior telemetry.
 * **Knockout Filters**: Optimizes speed by filtering out non-technical roles, junior profiles (< 2 years of experience), and candidates outside of India who do not wish to relocate.
 * **Tiered Skill Matcher**: Evaluates candidates against specific required skills (embeddings, vector search, retrieval metrics) across three priority tiers.
-* **Career Trajectory & Scale Scorer**: Analyzes company types (tech startups vs. IT consulting), progression timelines, and production engineering keywords (e.g., latency, throughput, scale).
-* **Behavioral telemetry modifier**: Penalizes inactive or unresponsive candidates based on 23 platform interaction signals.
 * **Deterministic Tie-Breaking**: Implements high-precision formatting with candidate ID ascending sorting to resolve identical scores.
 
 ### 🎨 UI/UX Enhancements (Streamlit App)
-* **Glassmorphism & HSL Styling**: Injected sleek CSS templates featuring transparent backdrops, blur states, and deep slate/indigo gradients.
-* **Micro-Animations**: Custom interactive CSS cards with hover scaling effects (1.02x translation on mouse-over).
+* **Glassmorphism & Styling**: Injected sleek CSS templates featuring transparent backdrops, blur states, and deep slate/indigo gradients.
 * **Split-Pane Profile Inspector**: Added a dual-column layout containing a shortlist datatable on the left and a detailed candidate detail inspector card on the right, displaying skill badges, YOE, location, and reasonings.
 
 ### ⚡ Backend Performance Optimizations
-* **Fast Date Indexing**: Replaced `datetime.strptime()` with manual string slicing and date math, rendering date computations up to 10x faster.
+* **Fast Date Indexing**: manual string slicing and date math, rendering date computations up to 10x faster.
 * **Single-Pass Lowercasing**: Joined job description texts first and lowercased once, minimizing heap string allocations.
 * **O(1) Hash Map Skill Lookups**: Implemented exact dictionary checks first, bypassing loop queries for >90% of standard skills.
 * **Flat Substring Search**: Replaced a nested skill evaluation loop with a flat substring search on pre-concatenated skill strings.

@@ -6,18 +6,18 @@ This system processes a pool of **100,000 candidates** (`candidates.jsonl`) and 
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
 * **Profile Validation & Consistency Checks**: Automatically flags and eliminates profiles with chronological inconsistencies, fake skills, or impossible behavior telemetry.
 * **Knockout Filters**: Optimizes speed by filtering out non-technical roles, junior profiles (< 2 years of experience), and candidates outside of India who do not wish to relocate.
 * **Tiered Skill Matcher**: Evaluates candidates against specific required skills (embeddings, vector search, retrieval metrics) across three priority tiers.
 * **Deterministic Tie-Breaking**: Implements high-precision formatting with candidate ID ascending sorting to resolve identical scores.
 
-### 🎨 UI (Streamlit App)
+###  UI (Streamlit App)
 * **Glassmorphism & Styling**: Injected sleek CSS templates featuring transparent backdrops, blur states, and deep slate/indigo gradients.
 * **Split-Pane Profile Inspector**: Added a dual-column layout containing a shortlist datatable on the left and a detailed candidate detail inspector card on the right, displaying skill badges, YOE, location, and reasonings.
 
-### ⚡ Backend Performance 
+###  Backend Performance 
 * **Fast Date Indexing**: manual string slicing and date math, rendering date computations up to 10x faster.
 * **Single-Pass Lowercasing**: Joined job description texts first and lowercased once, minimizing heap string allocations.
 * **O(1) Hash Map Skill Lookups**: Implemented exact dictionary checks first, bypassing loop queries for >90% of standard skills.
@@ -25,7 +25,7 @@ This system processes a pool of **100,000 candidates** (`candidates.jsonl`) and 
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 redrob_ranker/
@@ -51,7 +51,7 @@ redrob_ranker/
 
 ---
 
-## 📋 Step-by-Step Run Guide
+## Step-by-Step Run Guide
 
 Follow these steps to set up, execute the candidate ranker, and validate the output.
 
@@ -89,7 +89,7 @@ Submission is valid.
 
 ---
 
-## 🖥️ Launching the Streamlit Sandbox
+##  Launching the Streamlit Sandbox
 
 For testing smaller candidate samples interactively, launch the local Streamlit dashboard:
 
